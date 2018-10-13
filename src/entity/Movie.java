@@ -1,12 +1,15 @@
 package entity;
 
 public abstract class Movie {
+	/**
+	 * Single Responsibility Principle
+	 */
 	private String type;
-	
+
 	private String description;
-	
+
 	private String name;
-	
+
 	private String director;
 
 	public String getType() {
@@ -41,12 +44,15 @@ public abstract class Movie {
 		this.director = director;
 	}
 
+	/**
+	 * Liskov Substitution Principle and Liskov Substitution Principle
+	 */
 	@Override
 	public String toString() {
 		return "Movie [type=" + type + ", description=" + description + ", name=" + name + ", director=" + director
 				+ "]";
 	}
-	
-	
+
+
 
 }
