@@ -1,8 +1,14 @@
 package entity;
 
-public abstract class Movie {
+import java.util.Comparator;
+
+import service.AbstractMovieAPI;
+
+public class Movie implements Comparable<Movie> {
 	/**
 	 * Single Responsibility Principle
+	 * 
+	 * 
 	 */
 	private String type;
 
@@ -11,6 +17,10 @@ public abstract class Movie {
 	private String name;
 
 	private String director;
+
+	public Movie(String type) {
+		this.type = type;
+	}
 
 	public String getType() {
 		return type;
@@ -45,7 +55,7 @@ public abstract class Movie {
 	}
 
 	/**
-	 * Liskov Substitution Principle and Liskov Substitution Principle
+	 * Liskov Substitution Principle
 	 */
 	@Override
 	public String toString() {
@@ -53,6 +63,9 @@ public abstract class Movie {
 				+ "]";
 	}
 
-
+	@Override
+	public int compareTo(Movie o) {
+		return this.getType().compareTo(o.getType());
+	}
 
 }
